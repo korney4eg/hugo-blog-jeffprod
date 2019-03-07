@@ -1,5 +1,9 @@
 {{ define "main" }}
-
+<div class="tags">
+{{ range $name := .Params.tags }}
+    <span class="tag"><a href="{{ "tags" | absURL }}/{{ $name | urlize }}">{{ $name }}</a></span>
+{{ end }}
+</div>          
 <div class="columns">
     <div class="column is-9">
         <div class="tile is-child box">

@@ -13,3 +13,9 @@ min_version = "0.41"
 [author]
   name = "@JeffProd"
   homepage = "https://jeffprod.com"
+
+languageCode = "en-us"
+copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+
+[params]
+  description = "Site description goes here"

@@ -1,21 +1,25 @@
 {{ define "main" }}
-{{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate }}
 
 <div class="columns">
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
-                <h3>Welcome to my blog !</h3>
                 <hr>
                 {{ range $paginator.Pages }}
                     <article class="media">
                         <div class="media-content">
                             <div class="content">
-                                <p class="title is-4"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></p>
+                                <!-- <p class="title is-4"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></p> -->
+                                 <h1 class="title is-4"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></h1>
                                 <p class="subtitle is-size-6 has-text-grey-light">
-                                    Published at {{ .Date.Format "January 2, 2006" }} &middot;
-                                    <i class="far fa-clock"></i>&nbsp;{{.ReadingTime}} min read
+                                    {{ .Date.Format "02.01.2006" }} &middot;
                                 </p>
+                                <div class="tags">
+                                {{ range $name := .Params.tags }}
+                                    <span class="tag"><a href="{{ "tags" | absURL }}/{{ $name | urlize }}">{{ $name }}</a></span>
+                                {{ end }}
+                                </div>          
                                 <p>{{ .Summary }}...</p>
                             </div>
                         </div>
