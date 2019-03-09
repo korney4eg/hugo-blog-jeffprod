@@ -21,28 +21,27 @@
     <!-- nav -->
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="{{ .Site.BaseURL | absURL }}">Home</a>
-            <a class="navbar-item" href="{{ .Site.BaseURL | absURL }}">About me</a>
+            <a class="navbar-item" href="{{ .Site.BaseURL | absURL }}">Главная</a>
         </div>
     </nav>
     <!-- /nav -->
 
     <!-- hero -->
     <section class="hero is-info is-medium">
-        <div class="hero-body" style="background-image: url({{ "assets/img/header-pic.jpeg" | absURL }});">
+      <div class="hero-body" style="background-image: url({{if .Params.featureImg}}{{ .Params.featureImg | absURL }}{{else}}{{ .Site.Params.featureImg | absURL }}{{ end }});">
             <div class="container has-text-centered">
                 <br>
                 <h1 class="title is-size-1">
                     {{ if eq .Type "tags" }}
                         #{{ .Title }}
                     {{ else if eq .Type "archives" }}
-                        Archive {{ .Title }}
+                        {{ .Title }} год
                     {{ else }}
                         {{ .Title }}
                     {{ end }}
                 </h1>
             </div>
-{{ if eq .IsHome false }}
+{{ if eq .Type "post" }}
 <p class="subtitle is-size-6 has-text-grey-light" align="center">
     {{ .Date.Format "02.01.2006" }} &middot;
 </p>
