@@ -3,6 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="{{ .Site.Title }} {{ with .Title }} | {{ . }}{{ end }}" />
+    <meta property="og:type" content="{{ if .IsHome }} website {{else}}article{{end}}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:image" content="{{if .Params.featureImg}}{{ .Params.featureImg | absURL }}{{else}}{{ .Site.Params.featureImg | absURL }}{{ end }}" />
     <title>{{ .Site.Title }} {{ with .Title }} | {{ . }}{{ end }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,16 +18,41 @@
     {{ if .RSSLink }}
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
   <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
-{{ end }}
+    {{ end }}
 </head>
 <body>
 
-    <!-- nav -->
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="{{ .Site.BaseURL | absURL }}">Главная</a>
+      <div class="navbar-brand">
+          <a class="navbar-item" href="/" style="font-weight:bold;">
+            Makvaz
+          </a>
+        <a role="button" class="navbar-burger burger"  data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-end">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+            <a class="navbar-item" href="{{ .URL | absURL }}">{{ .Name }}</a>
+    {{ end }}
+          </div>
         </div>
+        
     </nav>
+    <script type="text/javascript">
+      (function() {
+        var burger = document.querySelector('.burger');
+        var nav = document.querySelector('#'+burger.dataset.target);
+        burger.addEventListener('click', function(){
+          burger.classList.toggle('is-active');
+          nav.classList.toggle('is-active');
+        });
+      })();
+    </script>
     <!-- /nav -->
 
     <!-- hero -->
@@ -36,6 +65,8 @@
                         #{{ .Title }}
                     {{ else if eq .Type "archives" }}
                         {{ .Title }} год
+                    {{ else if eq .Type "page" }}
+                        {{ default .Site.Params.description }}
                     {{ else }}
                         {{ .Title }}
                     {{ end }}
@@ -43,7 +74,7 @@
             </div>
 {{ if eq .Type "post" }}
 <p class="subtitle is-size-6 has-text-grey-light" align="center">
-    {{ .Date.Format "02.01.2006" }} &middot;
+    {{ .Date.Format "02.01.2006" }}
 </p>
 {{ end }}
         </div>
