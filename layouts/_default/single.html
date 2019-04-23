@@ -8,6 +8,11 @@
     <div class="column is-9">
         <div class="tile is-child box">
             <div class="content">
+              {{ if .Params.tocEnabled }}
+              <h2>Содержание:</h2>
+               {{ .TableOfContents }}
+               <br>
+               {{ end }}
                 {{ .Content }}
             </div>
         </div>
