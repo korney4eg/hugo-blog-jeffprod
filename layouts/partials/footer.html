@@ -7,7 +7,8 @@
             <span class="icon is-large"><a href="https://www.t.me/korney4eg" class="mysocial"><i class="fab fa-telegram-plane fa-3x"></i></a></span>&nbsp;&nbsp;
             <span class="icon is-large"><a href="https://www.linkedin.com/in/aliaksei-karneyeu-6064a745/" class="mysocial"><i class="fab fa-linkedin fa-3x"></i></a></span>&nbsp;&nbsp;
             <br><br>
-            Все права защищены &copy; {{ .Site.Title }} {{ now.Format "2006"}}
+            {{ i18n "rights_reserved" }} &copy;{{ .Site.Title }} 2017-{{ now.Format "2006"}}
+            <br><a href="{{ .Site.BaseURL }}/privacy" title="{{ i18n "privacy_policy" }}">{{ i18n "privacy_policy" }}</a>
             <!-- - <a class="mysocial" href="{{ "about" | absURL }}">About</a> -->
         </p>
     </div>

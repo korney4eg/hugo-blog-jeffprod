@@ -9,7 +9,7 @@
         <div class="tile is-child box">
             <div class="content">
               {{ if .Params.tocEnabled }}
-              <h2>Содержание:</h2>
+              <h2>{{ i18n "contents" }}:</h2>
                {{ .TableOfContents }}
                <br>
                {{ end }}

@@ -19,13 +19,14 @@
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
   <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
     {{ end }}
+  {{ partial "cookies" . }}
 </head>
 <body>
 
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
           <a class="navbar-item" href="/" style="font-weight:bold;">
-            Makvaz
+            {{ .Site.Title }}
           </a>
         <a role="button" class="navbar-burger burger"  data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
