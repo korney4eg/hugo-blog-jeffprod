@@ -37,8 +37,8 @@
 <div class="columns">
     <div class="column is-9">
         <nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
-            {{ if $paginator.HasPrev }}<a class="pagination-previous" href="{{ $paginator.Prev.URL }}">Предыдущая</a>{{ end }}
-            {{ if $paginator.HasNext }}<a class="pagination-next" href="{{ $paginator.Next.URL }}">Следующая</a>{{ end }}
+          {{ if $paginator.HasPrev }}<a class="pagination-previous" href="{{ $paginator.Prev.URL }}">{{ i18n "previous" }}</a>{{ end }}
+            {{ if $paginator.HasNext }}<a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "next" }}</a>{{ end }}
             <ul class="pagination-list">
                 {{ range $paginator.Pagers }}
                 <li class="pagination__item">

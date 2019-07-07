@@ -8,8 +8,12 @@
             <span class="icon is-large"><a href="https://www.linkedin.com/in/aliaksei-karneyeu-6064a745/" class="mysocial"><i class="fab fa-linkedin fa-3x"></i></a></span>&nbsp;&nbsp;
             <br><br>
             {{ i18n "rights_reserved" }} &copy;{{ .Site.Title }} 2017-{{ now.Format "2006"}}
-            <br><a href="{{ .Site.BaseURL }}/privacy" title="{{ i18n "privacy_policy" }}">{{ i18n "privacy_policy" }}</a>
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.bottom }}
+            <br><a href="{{ .URL | absURL }}" title="{{ .Name }}">{{ .Name }}</a>
+    {{ end }}
             <!-- - <a class="mysocial" href="{{ "about" | absURL }}">About</a> -->
+<div>Some icons made by <a href="https://www.freepik.com/?__hstc=57440181.09f364706b465841b1cac5fca654857f.1556415678126.1556415678126.1556415678126.1&__hssc=57440181.3.1556415678126&__hsfp=4202935523" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
         </p>
     </div>
 </footer>

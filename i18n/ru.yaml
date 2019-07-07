@@ -21,3 +21,12 @@
 
 - id: privacy_policy
   translation: Политика конфиденциальности
+
+# Navigation
+
+- id: about
+  translation: О сайте
+- id: previous
+  translation: Пердыдущая
+- id: next
+  translation: Следующая
