@@ -22,11 +22,3 @@
 - id: privacy_policy
   translation: Privacy policy
 
-# Navigation
-
-- id: about
-  translation: About
-- id: previous
-  translation: Older
-- id: next
-  translation: Newer
