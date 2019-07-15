@@ -21,15 +21,15 @@
                                 {{ end }}
                                 </div>          
                                 <p>
-                                {{ $found := 0 }}
-                                {{ range $name := .Params.tags }}
-                                  {{ if (where (readDir "static/assets/icons/") "Name" (print $name ".svg"))}}
-                                    {{ if eq $found 0 }}
-                                    <img src="/assets/icons/{{ $name }}.svg" align="left" style="width:60px;" vspace="0" hspace="20">
-                                    {{ $found = 1 }}
-                                    {{ end }}
-                                  {{ end }}
-                                {{end}}
+                                <!-- {{ $found := 0 }} -->
+                                <!-- {{ range $name := .Params.tags }} -->
+                                <!--   {{ if (where (readDir "static/assets/icons/") "Name" (print $name ".svg"))}} -->
+                                <!--     {{ if eq $found 0 }} -->
+                                <!--     <img src="/assets/icons/{{ $name }}.svg" align="left" style="width:60px;" vspace="0" hspace="20"> -->
+                                <!--     {{ $found = 1 }} -->
+                                <!--     {{ end }} -->
+                                <!--   {{ end }} -->
+                                <!-- {{end}} -->
                                 {{ .Summary }}...</p>
                             </div>
                         </div>

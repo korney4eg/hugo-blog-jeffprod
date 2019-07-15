@@ -21,9 +21,10 @@
                                 {{ end }}
                                 </div>          
                                 <p>
-                                  {{ if (where (readDir "static/assets/icons/") "Name" (print $tag ".svg"))}}
-                                    <img src="/assets/icons/{{ $tag }}.svg" align="left" style="width:100px;" vspace="20" hspace="20">
-                                  {{ end }}{{ .Summary }}...</p>
+                                  <!-- {{ if (where (readDir "static/assets/icons/") "Name" (print $tag ".svg"))}} -->
+                                  <!--   <img src="/assets/icons/{{ $tag }}.svg" align="left" style="width:100px;" vspace="20" hspace="20"> -->
+                                  <!-- {{ end }} -->
+                                  {{ .Summary }}...</p>
                             </div>
                         </div>
                     </article>
