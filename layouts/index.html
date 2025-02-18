@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate }}
+{{ $paginator := .Paginate (where .Site.Pages "Section" "post").ByPublishDate }}
 
 <div class="columns">
     <div class="column is-9">
