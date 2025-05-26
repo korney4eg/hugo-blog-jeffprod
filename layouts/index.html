@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $paginator := .Paginate (where .Site.Pages "Section" "post").ByPublishDate.Reverse }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Section" "post").ByPublishDate.Reverse }}
 
 <div class="columns">
     <div class="column is-9">
@@ -8,9 +8,6 @@
                 <hr>
                 {{ range $paginator.Pages }}
                 <!-- skipping wierd Posts post -->
-                    {{ if  .IsNode }}
-                    {{ continue }}
-                    {{ end }}
                     <article class="media">
                         <div class="media-content">
                             <div class="content">
@@ -51,8 +48,8 @@
 <div class="columns">
     <div class="column is-9">
         <nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
-            {{ if $paginator.HasPrev }}<a class="pagination-previous" href="{{ $paginator.Prev.URL }}">Предыдущая</a>{{ end }}
-            {{ if $paginator.HasNext }}<a class="pagination-next" href="{{ $paginator.Next.URL }}">Следующая</a>{{ end }}
+            {{ if $paginator.HasPrev }}<a class="pagination-previous" href="{{ $paginator.Prev.URL }}">{{ i18n "previousPage" }}</a>{{ end }}
+            {{ if $paginator.HasNext }}<a class="pagination-next" href="{{ $paginator.Next.URL }}">{{ i18n "nextPage" }}</a>{{ end }}
             <ul class="pagination-list">
                 {{ range $paginator.Pagers }}
                 <li class="pagination__item">

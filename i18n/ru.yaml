@@ -21,3 +21,9 @@
 
 - id: privacy_policy
   translation: Политика конфиденциальности
+
+- id: next_page
+  translation: Следующая
+
+- id: previous_page
+  translation: Педыдущая

@@ -22,3 +22,9 @@
 - id: privacy_policy
   translation: Privacy policy
 
+- id: next_page
+  translation: Next page
+
+- id: previous_page
+  translation: Previous page
+

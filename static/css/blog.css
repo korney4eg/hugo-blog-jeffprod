@@ -1,14 +1,19 @@
 html,body {
     font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
     background: #F0F2F4;
+    text-wrap: pretty;
     }
 .hero-body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     }
+.navbar-brand { padding-left: 12px;}
+.navbar-end { padding-right: 12px; }
 .mysocial { color: hsl(0, 0%, 100%);}
 .mysocial:hover { color: hsl(0, 0%, 71%) }
+.footer.has-background-grey-darker.has-text-white a:hover { color: #FFFFFF;}
+.hero.is-info .title {text-shadow: 2px 2px 4px #0007;}
 
 
 /* pre { */
